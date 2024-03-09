@@ -1,76 +1,94 @@
 @import url("https://fonts.googleapis.com/css2?family=Avenir+Next:wght@400;500;600;700&family=Fira+Code:wght@400;700&family=Fira+Mono:wght@400;700&family=Manrope:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap");
 
 :root {
-	--font-base: "Avenir Next", "Manrope", sans-serif;
-	--font-mono: "Fira Code", "Fira Mono", "Roboto Mono", monospace;
-	--h: 180;
-	--s: 2%;
-	--l: 20%;
-	--color-bg: hsl(0, 0%, 4%);
-	--color-grey-100: #fff;
-	--color-grey-300: #e4e7e7;
-	--color-grey-400: #c9cfcf;
-	--color-grey-500: #9ea9a9;
-	--color-grey-700: #7a8484;
-	--color-grey-900: #3b4040;
-	--color-grey-950: #272a2a;
-	--color-primary: hsl(var(--h), var(--s), var(--l));
-	--shadow-md: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-		rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-	--shadow-lg: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-	--rounded-sm: 0.5rem;
-	--rounded-md: 1.5rem;
+  --font-base: "Avenir Next", "Manrope", sans-serif;
+  --font-mono: "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  --h: 180;
+  --s: 2%;
+  --l: 20%;
+  --color-bg: hsl(0, 0%, 4%);
+  --color-grey-100: #fff;
+  --color-grey-300: #e4e7e7;
+  --color-grey-400: #c9cfcf;
+  --color-grey-500: #9ea9a9;
+  --color-grey-700: #7a8484;
+  --color-grey-900: #3b4040;
+  --color-grey-950: #272a2a;
+  --color-primary: hsl(var(--h), var(--s), var(--l));
+  --shadow-md: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  --shadow-lg: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  --rounded-sm: 0.5rem;
+  --rounded-md: 1.5rem;
+}
+
+.html,
+.body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-grey-100);
+  /* Rimuovere il padding-top se non necessario o aggiustarlo in base all'header */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 100%; /* Usa l'intera larghezza disponibile */
+  background-color: #808080; /* Grigio */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Mantiene l'header in posizione fissa */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Assicura che l'header sia sopra gli altri elementi */
+}
+
+.header .logo {
+  /* Invece di usare flex-grow per spostarlo a destra, lo posizioniamo normalmente a sinistra */
+  display: flex;
+  justify-content: flex-start; /* Logo a sinistra */
+}
+
+.header .navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Mantiene uno spazio tra i bottoni e l'hamburger menu */
+}
+
+.nav-button,
+.hamburger-menu {
+  cursor: pointer;
+  border: none;
+  background-color: #e0e0e0; /* Sfondo dei bottoni e menu */
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.hamburger-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem; /* Dimensione dell'icona del menu */
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-html {
-	height: 100%;
-}
-
-html,
-body,
-#__next {
-	min-height: 100% !important;
-	height: 100%;
-}
-
-body {
-	min-height: 100%;
-	font-family: var(--font-base);
-	background-color: var(--color-bg);
-	color: var(--color-grey-100);
-	background-image: url("/pattern.png");
-}
-
-pre,
-code {
-	font-family: var(--font-mono);
-}
-
-code {
-	background-color: var(--color-grey-950);
-	padding: 0.25rem 0.5rem;
-	margin: 0 0.25rem;
-	border-radius: 0.4rem;
-	font-size: 0.875rem;
-}
-
-code:before,
-code:after {
-	content: "`";
-}
-
-ul,
-li {
-	list-style-position: inside;
-}
-
-header {
-	position: fixed;
-	width: 100%;
+.App {
+  display: flex;
+  flex-direction: column; /* Orientamento verticale dei figli */
+  justify-content: center; /* Centra i figli verticalmente */
+  align-items: center; /* Centra i figli orizzontalmente */
+  height: 100vh; /* Altezza totale del viewport */
+  width: 100%; /* Larghezza completa */
+  padding: 60px 0; /* Aggiungi padding superiore e inferiore per evitare la sovrapposizione con l'header fisso */
+  box-sizing: border-box; /* Assicura che il padding non influenzi le dimensioni totali */
 }

@@ -12,6 +12,6 @@ const Header = () => {
             </div>
         </div>
     );
-};git
+};
 
 export default Header;
