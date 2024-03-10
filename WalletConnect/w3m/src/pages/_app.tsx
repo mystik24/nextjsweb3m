@@ -83,7 +83,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				<div className="tab-content">
 					{activeTab === 1 && (
 						// Contenuto per il Tab 1
-						<div>
+						<div className="tab-element">
 							<div>Contenitore 1 - Tab 1</div>
 							<div>Contenitore 2 - Tab 1</div>
 							<div>Contenitore 3 - Tab 1</div>
@@ -93,7 +93,7 @@ export default function App({ Component, pageProps }: AppProps) {
 					)}
 					{activeTab === 2 && (
 						// Contenuto per il Tab 2
-						<div>
+						<div className="tab-content">
 							<div>Contenitore 1 - Tab 2</div>
 							<div>Contenitore 2 - Tab 2</div>
 							<div>Contenitore 3 - Tab 2</div>
@@ -103,7 +103,7 @@ export default function App({ Component, pageProps }: AppProps) {
 					)}
 					{activeTab === 3 && (
 						// Contenuto per il Tab 3
-						<div>
+						<div className="tab-content">
 							<div>Contenitore 1 - Tab 3</div>
 							<div>Contenitore 2 - Tab 3</div>
 							<div>Contenitore 3 - Tab 3</div>

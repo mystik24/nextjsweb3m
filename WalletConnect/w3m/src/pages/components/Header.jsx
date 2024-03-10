@@ -4,7 +4,7 @@ import React from 'react';
 const Header = () => {
     return (
         <div className="header">
-            <div className="logo">DeFi LAb</div>
+            <div className="logo">DeFi Lab</div>
             <div className="navigation">
                 <button className="nav-button">Button 1</button>
                 <button className="nav-button">Button 2</button>
